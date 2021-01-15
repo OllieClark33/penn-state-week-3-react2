@@ -37,7 +37,7 @@ class App extends Component {
   handleAddItem(s) {
     // recieving a state that is a object in the form {name: XXXX}, and this will be pushed into the relevant array at the specific key
     console.log(this.state.items)
-    console.log(this.state.items[n])
+    console.log(this.state.items)
 
     // this.setState(({items}) => ({
     //     items: {}
