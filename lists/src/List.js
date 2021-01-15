@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import ListItem from './ListItem.js';
 import AddItem from './AddItem.js';
-const uuidv4 = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 class List extends Component {
 
   render() {
     var name = this.props.name;
     var items = this.props.items;
+    console.log(items)
+    console.log(typeof(items))
 
     if (items) {
       return (

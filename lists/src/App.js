@@ -20,14 +20,10 @@ class App extends Component {
    * as the value put into the "lists" array. It should then re-render this App component.
    */
   handleAddList(s) {
-      // Implement this function!
-      this.setState(prevState => ({
-        lists: prevState.lists.push(s),
-        items: prevState.items[s] = []
+      this.setState(({ lists, items }) => ({ 
+        lists: [...lists, s],
+        items: {...items, [s]: [] }
       }));
-      console.log("state after update", this.state)
-      console.log("state.items after update", this.state.items)
-      console.log("state.lists after update", this.state.lists)
   }
 
   /**
@@ -39,14 +35,21 @@ class App extends Component {
    * the state, this function  should then re-render this App component.
    */
   handleAddItem(s) {
-      // Implement this function!
+    // recieving a state that is a object in the form {name: XXXX}, and this will be pushed into the relevant array at the specific key
+    console.log(this.state.items)
+    console.log(this.state.items[n])
+
+    // this.setState(({items}) => ({
+    //     items: {}
+    // }))
   }
+
+
 
   /**
    * Renders the component.
    */
   render() {
-    console.log("state on render", this.state)
     return (
       <div className="App">
         <AddList addList={this.handleAddList.bind(this)} />

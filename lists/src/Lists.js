@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import List from './List.js';
-const uuidv4 = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
 class Lists extends Component {
 
