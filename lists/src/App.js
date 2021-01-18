@@ -36,12 +36,22 @@ class App extends Component {
    */
   handleAddItem(s) {
     // recieving a state that is a object in the form {name: XXXX}, and this will be pushed into the relevant array at the specific key
-    console.log(this.state.items)
-    console.log(this.state.items)
 
-    // this.setState(({items}) => ({
-    //     items: {}
-    // }))
+    // this.state = {
+    //  lists: [], 
+    //  items: {}
+    // };
+
+    // s logs: {newItem: {name: "max"}, idName: "dogs"}
+
+    let listName = s.idName; // dogs
+    let updatedItems = s.newItem;  // {name: "max"}
+    let items = this.state.items;
+    for (const [key] of Object.entries(items)) {
+      if (key === listName) {
+        this.setState({items: {...items, [key]: [...items[key], updatedItems]}})
+      }
+    }
   }
 
 

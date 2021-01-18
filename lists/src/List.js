@@ -8,8 +8,6 @@ class List extends Component {
   render() {
     var name = this.props.name;
     var items = this.props.items;
-    console.log(items)
-    console.log(typeof(items))
 
     if (items) {
       return (
